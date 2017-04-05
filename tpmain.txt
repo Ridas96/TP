@@ -1,4 +1,4 @@
-// Estructura b醩ica para hacer animaciones interactivas
+// Estructura b谩sica para hacer animaciones interactivas
 #include "Pantalla.h"
 #include "SDL2/SDL.h"
 #include <stdlib.h>
@@ -15,23 +15,23 @@ int puntuacion;
 
 int main(int argc, char **argv)
 {
-    // Creaci髇 y configuraci髇 de la pantalla
+    // Creaci贸n y configuraci贸n de la pantalla
     Pantalla_Crea("fondo", 800,600);
 
-    // Declaraci髇 de variables que mantengan el estado
-    // de la animaci髇
+    // Declaraci贸n de variables que mantengan el estado
+    // de la animaci贸n
     Imagen inicio=Pantalla_ImagenLee("windows.bmp",0);
 
     PlaySound(TEXT("sonidowindows.wav"),NULL,SND_ASYNC); ///Sonido windows
 
-    // Bucle principal de la animaci髇
+    // Bucle principal de la animaci贸n
     int terminado = 0;
     while (Pantalla_Activa() && !terminado)
     {
-        // Detecci髇 de los eventos producidos por el usuario
+        // Detecci贸n de los eventos producidos por el usuario
         if (Pantalla_TeclaPulsada(SDL_SCANCODE_RETURN)) terminado=1;
 
-        // Dibujo de los elementos de la simulaci髇 en el frame
+        // Dibujo de los elementos de la simulaci贸n en el frame
         Pantalla_DibujaImagen(inicio,0,0,Pantalla_Anchura(),Pantalla_Altura());
         Pantalla_DibujaTexto("Hola Mundo" , 350 , 550);
         Pantalla_DibujaTexto("Pulsa return para continuar" ,50 ,50);
@@ -53,3 +53,4 @@ int main(int argc, char **argv)
 
     ///tiempo inicial
     int t1= time(NULL);
+while
