@@ -3,15 +3,16 @@
 #include "Estrella.h"
 #include "Colision.h"
 #include "Personaje.h"
+
 struct EstrellasRep
 {
-    Estrella * estrella;
+    Elemento * estrella;
     int max, n;
 };
 Estrellas EstrellasCrea(Imagen i,int w,int h,int x,int y,int max)
 {
     Estrellas p =malloc(sizeof(struct EstrellasRep));
-    p->estrella=malloc(max*sizeof(Estrellas));
+    p->estrella=malloc(max*sizeof(Elemento));
     p->n=0;
     return p;
 };
