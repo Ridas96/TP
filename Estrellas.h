@@ -3,7 +3,7 @@
 #include "Pantalla.h"
 
 typedef struct EstrellasRep *Estrellas;
-
+typedef int Elemento;
 Estrellas EstrellasCrea(Imagen i,int w,int h,int x,int y,int max);
 void EstrellasLibera(Estrellas p);
 void EstrellasDibuja(Estrellas p);
