@@ -9,7 +9,7 @@ struct EstrellasRep
     Elemento * estrella;
     int max, n;
 };
-Estrellas EstrellasCrea(Imagen i,int w,int h,int x,int y,int max)
+Estrellas EstrellasCrea(int max)
 {
     Estrellas p =malloc(sizeof(struct EstrellasRep));
     p->estrella=malloc(max*sizeof(Elemento));
@@ -26,15 +26,17 @@ int EstrellasLleno(Estrellas p)
     return (p->n==p->max);
 
 };
-void EstrellasInserta(Estrellas p,Imagen i,int w,int h,int x,int y)
+void EstrellasInserta(Estrellas p,Elemento estrella)
 {
     p->estrella[p->n]=EstrellaCrea(i,w,h,x,y);
     p->n++;
 };
 void EstrellasDibuja(Estrellas p)
 {
-
-
+     int i=0;
+        while (i<p->n){
+         EstrellaDibuja(p->estrella[i]);
+         i++;
 };
 int EstrellasColision(Estrellas p,int x, int y, int w, int h)//la coordenadas de la estrella(del personaje) desde el main la llamare como get x, get y, etc
 {
@@ -48,7 +50,7 @@ int EstrellasColision(Estrellas p,int x, int y, int w, int h)//la coordenadas de
         }
         else i++;
     }
-//bucle que recorra cada estrella para saber si hay colision
+
 //bucle colision del estilo conjunto suprime maximo
 
 }
