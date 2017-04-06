@@ -2,48 +2,64 @@
 #include "Enemigos.h"
 #include "Enemigo.h"
 
-struct EnemigosRep{
-    Enemigo p; ///el enemigo
-    Enemigos e;///el siguiente
-struct EnemigosRep *sig;
+struct Nodo{
+    Elemento Enemigo; ///el enemigo
+    struct Nodo *sig;///el siguiente
 };
+typedef struct Nodo *NodoPtr; //auxiliar para manejarlo por dentro
+struct EnemigosRep{
+    NodoPtr cabecera;
+    int n;
+}
 Enemigos EnemigosCrea(){
-    Enemigos e=malloc(sizeof (struct EnemigosRep));
-    return e;
-
+    Enemigos nuevo=malloc(sizeof(struct EnemigosRep));
+    nuevo->cabecera=malloc(sizeof (struct Nodo);
+    nuevo->sig=NULL;
+    nuevo->n=0;
+    return nuevo;
+void EnemigosLibera(Enemigos e){
+    while(e->cabecera){
+        NodoPtr borrar=c->cabecera;
+        e->cabecera=borrar->sig;
+        free(borrar);
+}
+    free(e);
 };
 void EnemigosInserta(Estrellos e,Enemigo p){
-    
+    NodoPtr nuevo=malloc(sizeof(struct Nodo));
+    nuevo->dato=e;
+    nuevo->sig=aux->sig;
+    aux->sig=nuevo;
+    e->n++;
 }
-
-void EnemigosLibera(Enemigos e){
-    free(e);
-
-};
-/*
-void EnemigosMueve(Enemigos e){
-
-        e->x += vx;
-        e->y += vy;
-        if (e->x>Pantalla_Anchura()-e->w) e->x=Pantalla_Anchura()-e->w;
-        if (e->x<0)e->x =0;
-        if (e->y>Pantalla_Altura()-e->h)e->y = Pantalla_Altura()-e->h;
-        if (e->y<0)e->y =0;
+//void EnemigosMueve(Enemigos e){
+    
+   
 
 };
 
-//void EnemigosInserta(Enemigos e,Enemigo p){
-//Enemigo p=malloc(sizeof (struct EnemigosRep));
-
-
-//}
-//};
+void EnemigosInserta(Enemigos e,Enemigo p){
+    NodoPtr nuevo=malloc(sizeof(struct Nodo));
+    nuevo->dato=e;
+    nuevo->sig=aux->sig;
+    aux->sig=nuevo;
+    e->n++;
+};
 void EnemigosDibuja(Enemigos e){
-    Pantalla_DibujaImagen(e->i,e->x,e->y,e->w,e->h);
+    while (e->cabecera){
+            EnemigoDibuja(e->cabecera[n]);
+    }
 };
 
-int EnemigosColision(Enemigos e){
-
-
+int EnemigosColision(Enemigos e,int x,int y, int w,int h){
+    while (e->cabecera){
+    if (Colision(EnemigoGetx(e->cabecera[n]),EnemigoGety(e->cabecera[n]),EnemigoGetw(e->cabecera[n]),EnemigoGeth(e->cabecera[n]),x,y,w,h)))
+    {
+        NodoPtr borrar=aux->sig;
+        aux->sig=borrar->sig;
+        free(borrar);
+        c->n--;
+    }
+  }
 };
-*/
+
