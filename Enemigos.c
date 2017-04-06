@@ -3,29 +3,29 @@
 #include "Enemigo.h"
 
 struct Nodo{
-    Elemento Enemigo; ///el enemigo
+    Elemento dato; ///el enemigo
     struct Nodo *sig;///el siguiente
 };
 typedef struct Nodo *NodoPtr; //auxiliar para manejarlo por dentro
 struct EnemigosRep{
     NodoPtr cabecera;
     int n;
-}
+};
 Enemigos EnemigosCrea(){
     Enemigos nuevo=malloc(sizeof(struct EnemigosRep));
-    nuevo->cabecera=malloc(sizeof (struct Nodo);
+    nuevo->cabecera=malloc(sizeof (struct Nodo));
     nuevo->sig=NULL;
     nuevo->n=0;
     return nuevo;
 void EnemigosLibera(Enemigos e){
     while(e->cabecera){
-        NodoPtr borrar=c->cabecera;
+        NodoPtr borrar=e->cabecera;
         e->cabecera=borrar->sig;
         free(borrar);
 }
     free(e);
 };
-void EnemigosInserta(Estrellos e,Enemigo p){
+void EnemigosInserta(Estrellas e,Enemigo p){
     NodoPtr nuevo=malloc(sizeof(struct Nodo));
     nuevo->dato=e;
     nuevo->sig=aux->sig;
@@ -33,12 +33,12 @@ void EnemigosInserta(Estrellos e,Enemigo p){
     e->n++;
 }
 //void EnemigosMueve(Enemigos e){
-    
-   
+
+
 
 };
 
-void EnemigosInserta(Enemigos e,Enemigo p){
+void EnemigosInserta(Enemigos e,Imagen i,int x,int y,int w,int h,int vx,int vy){
     NodoPtr nuevo=malloc(sizeof(struct Nodo));
     nuevo->dato=e;
     nuevo->sig=aux->sig;
@@ -62,4 +62,5 @@ int EnemigosColision(Enemigos e,int x,int y, int w,int h){
     }
   }
 };
+
 
