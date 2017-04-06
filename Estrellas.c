@@ -26,7 +26,7 @@ int EstrellasLleno(Estrellas p)
     return (p->n==p->max);
 
 };
-void EstrellasInserta(Estrellas p,Elemento estrella)
+void EstrellasInserta(Estrellas p,Imagen i, int w,int h,int x,int y)
 {
     p->estrella[p->n]=EstrellaCrea(i,w,h,x,y);
     p->n++;
@@ -35,7 +35,7 @@ void EstrellasDibuja(Estrellas p)
 {
      int i=0;
         while (i<p->n){
-         EstrellaDibuja(p->estrella[i]);
+         EstrellasDibuja(p->estrella[i]);
          i++;
 };
 int EstrellasColision(Estrellas p,int x, int y, int w, int h)//la coordenadas de la estrella(del personaje) desde el main la llamare como get x, get y, etc
@@ -43,7 +43,7 @@ int EstrellasColision(Estrellas p,int x, int y, int w, int h)//la coordenadas de
     int i = 0;
     while (i < p->n)
     {
-        if (Colision(x,y,w,h,EstrellaGetx(p->estrella[i]),EstrellaGety(p->estrella[i] ),EstrellaGetw(p->estrella[i]),EstrellaGeth(p->estrella[i])))//compruebo si colisionan con estrella iesima
+        if (Colision(EstrellaGetx(p->estrella[i]),EstrellaGety(p->estrella[i] ),EstrellaGetw(p->estrella[i]),EstrellaGeth(p->estrella[i]),x,y,w,h))//compruebo si colisionan con estrella iesima
         {
             p->estrella[i] = p->n[p->n-1];
             p->n--;
