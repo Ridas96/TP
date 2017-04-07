@@ -43,7 +43,7 @@ int EstrellasColision(Estrellas p,int x, int y, int w, int h)//la coordenadas de
     int i = 0;
     while (i < p->n)
     {
-        if (Colision(EstrellaGetx(p->estrella[i]),EstrellaGety(p->estrella[i] ),EstrellaGetw(p->estrella[i]),EstrellaGeth(p->estrella[i]),x,y,w,h))//compruebo si colisionan con estrella iesima
+       if (Colision(EstrellaGetx(p->estrella[i]),EstrellaGety(p->estrella[i] ),EstrellaGetw(p->estrella[i]),EstrellaGeth(p->estrella[i]),x,y,w,h))//compruebo si colisionan con estrella iesima
         {
             p->estrella[i] = p->estrella[p->n-1];
             p->n--;
